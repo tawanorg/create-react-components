@@ -18,7 +18,7 @@ const theme = Object.assign({}, themesConfig, {
 ```
 
 ## NPM Scripts
-* `start`: run storybook, eslint, serving files at http://localhost:6006
+* `start`: run storybook, eslint, serving files at http://localhost:9000
 * `develop`: run styleguidist and storybook both at the same time in parallel mode
 * `test`: run unit tests
 * `test:watch`: run unit tests in watch mode
@@ -46,7 +46,7 @@ Storybook monitors the `<root-dir>/src/components` directory for stories. All of
 called `<root-dir>/src/components/<Component-name>/<Component-name>.story.js`.
 
 * Open a console (shell) and type: ```npm start```
-* Open a browser at `http://localhost:6006`
+* Open a browser at `http://localhost:9000`
 
 #### Dumb Component
 
@@ -78,10 +78,10 @@ Istanbul is used for code coverage and reporting, so:
 
 
 ### Try the bundle
-* `npm run build or npm run build:prod` for bundle in develop o production mode
+* `npm run build or npm run build:production` for bundle in develop o production mode
 
 
-### Release the Kraken
+### Release the package to NPM
 Publish your lib into your private registry or share with the community
 * `npm publish`
 
