@@ -1,12 +1,21 @@
+// Third party
+import styledComponents, { ThemeProvider } from 'styled-components'
+
+// Components
 import ReactComponents from './components/react';
-import styled, { buttonStyle } from './themes';
+
+// Style
+import defaultTheme from './themes';
+import button from './themes/js/button'
 
 const components = {
-  defaultTheme: styled,
-  buttonStyle,
+  main: defaultTheme,
+  button,
 }
 
 export default components
 export {
+  ThemeProvider,
   ReactComponents,
+  styledComponents,
 }

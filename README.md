@@ -1,15 +1,31 @@
 ## How to use
 
-After complied the package
+# General use
 ```
-import { ReactComponents, ReactNativeComponents, themesConfig } from 'create-react-components'
+import styled, { ThemeProvider, ReactComponents } from 'create-react-components'
 
 const {
   Button
 } = ReactComponents
 
-const theme = Object.assign({}, themesConfig, {
-  ...your extends configured  
+<ThemeProvider theme={styled.defaultTheme}>
+  <Button>Hello World</Button>
+</ThemeProvider>
+```
+
+# Overwrite styling
+```
+import styled, { ThemeProvider, ReactComponents } from 'create-react-components'
+
+const {
+  Button
+} = ReactComponents
+
+const theme = Object.assign({}, styled.defaultTheme, {
+  color: 'yellow',
+  button: Object.assign({}, styled.buttonStyle, {
+    color: 'black',
+  })
 })
 
 <ThemeProvider theme={theme}>
