@@ -5,12 +5,18 @@ import styledComponents, { ThemeProvider } from 'styled-components'
 import ReactComponents from './components/react';
 
 // Style
-import defaultTheme from './themes';
-import button from './themes/js/button'
+import themeMain from './themes';
+import themeButton from './themes/js/button'
 
+// Style components
+const subStyled = {
+  button: themeButton,
+}
+
+// Style main exporter
 const components = {
-  main: defaultTheme,
-  button,
+  main: Object.assign({}, themeMain, subStyled),
+  ...subStyled,
 }
 
 export default components

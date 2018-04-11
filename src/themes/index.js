@@ -1,11 +1,8 @@
-import buttonStyle from './js/button'
+import themeButton from './js/button'
 
-const themesConfig = {
+const themeMain = {
   color: 'yellow',
-  button: buttonStyle,
+  button: themeButton,
 };
 
-export default themesConfig
-export {
-  buttonStyle,
-}
+export default themeMain
