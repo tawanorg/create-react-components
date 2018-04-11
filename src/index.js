@@ -1,5 +1,7 @@
-export ReactComponents from './components/react'
-export ReactNativeComponents from './components/react-native'
-export const themes = {
-  color: 'yellow'
-}
+export ReactComponents from './components/react';
+
+export ReactNativeComponents from './components/react-native';
+
+export const themesConfig = {
+  color: 'yellow',
+};

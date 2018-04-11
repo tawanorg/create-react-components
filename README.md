@@ -1,3 +1,22 @@
+## How to use
+
+After complied the package
+```
+import { ReactComponents, ReactNativeComponents, themesConfig } from 'create-react-components'
+
+const {
+  Button
+} = ReactComponents
+
+const theme = Object.assign({}, themesConfig, {
+  ...your extends configured  
+})
+
+<ThemeProvider theme={theme}>
+  <Button>Hello World</Button>
+</ThemeProvider>
+```
+
 ## NPM Scripts
 * `start`: run storybook, eslint, serving files at http://localhost:6006
 * `develop`: run styleguidist and storybook both at the same time in parallel mode

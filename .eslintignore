@@ -4,4 +4,4 @@ build/*
 node_modules/*
 .snapguidist/*
 coverage/*
-dist/*
+lib/*

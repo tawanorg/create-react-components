@@ -9,7 +9,11 @@ import postcssUrl from 'postcss-url';
 import postcssImport from 'postcss-import';
 import globalImport from 'postcss-global-import';
 import url from 'rollup-plugin-url';
-const pkg = require('./package.json');
+import replace from 'rollup-plugin-replace';
+
+const pkg = require('../../package.json');
+
+const external = Object.keys(pkg.dependencies);
 
 const cssExportMap = {};
 
@@ -36,8 +40,26 @@ export default {
     format: 'cjs',
   },
   sourcemap: true,
-  external: ['react'],
+  external,
   plugins: [
+    replace({ 'process.env.NODE_ENV': JSON.stringify('development') }),
+    resolve({
+      jsnext: true,
+      main: true,
+      browser: true,
+    }),
+    babel({ exclude: 'node_modules/**' }),
+    commonjs({
+      exclude: 'node_modules/process-es6/**',
+      include: [
+        'node_modules/create-react-class/**',
+        'node_modules/fbjs/**',
+        'node_modules/object-assign/**',
+        'node_modules/react/**',
+        'node_modules/react-dom/**',
+        'node_modules/prop-types/**'
+      ]
+    }),
     postcss({
       plugins: postcssPlugins,
       getExportNamed: false,
@@ -45,17 +67,8 @@ export default {
         return cssExportMap[id];
       },
       extensions: ['.css'],
-      extract: 'dist/styles.css',
-    }),
-    resolve({
-      jsnext: true,
-      main: true,
-      browser: true,
-    }),
-    commonjs({
-      include: 'node_modules/**'
+      extract: pkg.style,
     }),
     url({ limit: 1000000 }),
-    babel({ exclude: 'node_modules/**' }),
   ],
 };
