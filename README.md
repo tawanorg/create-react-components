@@ -27,14 +27,14 @@ const theme = Object.assign({}, themesConfig, {
 * `clean`: remove dist and coverage directory
 * `build`: bundle the lib to the dist dir using development settings
 * `build:prod`: bundle the lib to the dist dir using production settings
-* `coverage`: run test, flow and generate reports into coverage dir
+* `coverage`: run test and generate reports into coverage dir
 
 ### Developing a Component
 A typical UI component should comply with the following guidelines:
 
 * If it has no state, it should be declared as a [Dumb Component](#dumb-component).
 * Unless having another team member approval, all components should have `className` and `style` props declared.
-* [Flow coverage](#coverage-to-the-rescue) of the file must be above the configured threshold.
+* [coverage](#coverage-to-the-rescue) of the file must be above the configured threshold.
 * It should have [tests](#running-tests) and code coverage must be above the configured threshold.
 * It should have a [story](#start-coding) declared. With knobs, preferably.
 * All code must follow the configured code style.
