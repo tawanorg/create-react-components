@@ -2,17 +2,16 @@ import uglify from 'rollup-plugin-uglify';
 import cssnano from 'cssnano';
 import postcssModules from 'postcss-modules';
 import replace from 'rollup-plugin-replace';
+import baseConfig from './rollup.config'
 
 const cssExportMap = {};
 
-const configProduction = Object.assign({}, require('./rollup.config.js'), {
+const configProduction = Object.assign({}, baseConfig, {
   plugins: [
+    ...baseConfig.plugins,
     replace({ 'process.env.NODE_ENV': JSON.stringify('production') }),
     postcssModules({
-      getJSON(id, exportTokens) {
-        cssExportMap[id] = exportTokens;
-      },
-      generateScopedName: '[hash:base64:5]',
+      generateScopedName: '[name]__[local]___[hash:base64:5]',
     }),
     cssnano(),
     uglify(),

@@ -10,6 +10,8 @@ import postcssImport from 'postcss-import';
 import globalImport from 'postcss-global-import';
 import url from 'rollup-plugin-url';
 import replace from 'rollup-plugin-replace';
+import globals from "rollup-plugin-node-globals";
+import nodeBuiltins from 'rollup-plugin-node-builtins';
 
 const pkg = require('../../package.json');
 
@@ -39,16 +41,15 @@ export default {
     file: pkg.main,
     format: 'cjs',
   },
-  sourcemap: true,
+  sourcemap: false,
   external,
   plugins: [
-    replace({ 'process.env.NODE_ENV': JSON.stringify('development') }),
     resolve({
       jsnext: true,
       main: true,
       browser: true,
+      preferBuiltins: true
     }),
-    babel({ exclude: 'node_modules/**' }),
     commonjs({
       exclude: 'node_modules/process-es6/**',
       include: [
@@ -60,6 +61,13 @@ export default {
         'node_modules/prop-types/**',
       ]
     }),
+    globals(),
+    nodeBuiltins(),
+    replace({ 'process.env.NODE_ENV': JSON.stringify('development') }),
+    babel({
+      exclude: 'node_modules/**',
+      plugins: ['external-helpers']
+    }),
     postcss({
       plugins: postcssPlugins,
       getExportNamed: false,
@@ -70,5 +78,5 @@ export default {
       extract: pkg.style,
     }),
     url({ limit: 1000000 }),
-  ],
+  ]
 };

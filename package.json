@@ -8,10 +8,11 @@
   "scripts": {
     "clean": "rm -rf dist lib coverage",
     "start": "NODE_ENV=development start-storybook -p 9000 --config-dir config/storybook",
+    "dev": "NODE_ENV=development rollup -c config/rollup/rollup.config.js -w",
     "build": "NODE_ENV=development npm run clean && rollup -c config/rollup/rollup.config.js",
     "build:production": "NODE_ENV=production npm run clean && npm run check && rollup -c config/rollup/rollup.config.production.js",
     "check": "npm run test && npm run lint",
-    "lint": "eslint src/",
+    "lint": "eslint src/ --fix",
     "test": "NODE_ENV=development jest",
     "test:watch": "jest --watchAll",
     "coverage": "npm run test:coverage & npm run typecheck:coverage",
@@ -19,11 +20,15 @@
   },
   "dependencies": {
     "classnames": "^2.2.5",
+    "styled-components": "^3.2.5"
+  },
+  "peerDependencies": {
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
-    "react-proptypes": "^1.0.0"
+    "prop-types": "^15.6.1"
   },
   "devDependencies": {
+    "@kadira/storybook": "^2.35.3",
     "@storybook/addon-info": "^3.1.6",
     "@storybook/addon-knobs": "^3.1.8",
     "@storybook/addon-notes": "^3.1.6",
@@ -39,6 +44,7 @@
     "babel-preset-es2015-rollup": "^3.0.0",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-1": "^6.24.1",
+    "classnames": "^2.2.5",
     "cssnano": "^3.10.0",
     "enzyme": "^2.9.1",
     "eslint": "^4.3.0",
@@ -71,6 +77,8 @@
     "rollup-plugin-commonjs": "^8.0.2",
     "rollup-plugin-eslint": "^4.0.0",
     "rollup-plugin-image": "^1.0.2",
+    "rollup-plugin-node-builtins": "^2.1.2",
+    "rollup-plugin-node-globals": "^1.2.0",
     "rollup-plugin-node-resolve": "^3.0.0",
     "rollup-plugin-postcss": "^0.5.4",
     "rollup-plugin-replace": "^1.2.1",

@@ -1,5 +1,12 @@
-export ReactComponents from './components/react';
+import ReactComponents from './components/react';
+import styled, { buttonStyle } from './themes';
 
-export const themesConfig = {
-  color: 'yellow',
-};
+const components = {
+  defaultTheme: styled,
+  buttonStyle,
+}
+
+export default components
+export {
+  ReactComponents,
+}

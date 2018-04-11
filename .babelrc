@@ -7,7 +7,6 @@
     "react"
   ],
   "plugins": [
-    "external-helpers",
     "inline-react-svg",
     "transform-class-properties"
   ]
