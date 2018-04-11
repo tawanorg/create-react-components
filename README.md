@@ -8,25 +8,25 @@ const {
   Button
 } = ReactComponents
 
-<ThemeProvider theme={styled.defaultTheme}>
+<ThemeProvider theme={styled.main}>
   <Button>Hello World</Button>
 </ThemeProvider>
 ```
 
 # Overwrite styling
 ```
-import styled, { ThemeProvider, ReactComponents } from 'create-react-components'
+import styled, { ThemeProvider, ReactComponents } from 'tgp-components'
+
+const theme = Object.assign({}, styled.main, {
+  color: 'red',
+  button: Object.assign({}, styled.button, {
+    borderColor: 'yellow',
+  })
+})
 
 const {
   Button
 } = ReactComponents
-
-const theme = Object.assign({}, styled.defaultTheme, {
-  color: 'yellow',
-  button: Object.assign({}, styled.buttonStyle, {
-    color: 'black',
-  })
-})
 
 <ThemeProvider theme={theme}>
   <Button>Hello World</Button>
