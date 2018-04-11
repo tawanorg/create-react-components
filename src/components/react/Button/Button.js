@@ -5,7 +5,7 @@ const Button = ({
 }) => {
   return (
     <button>
-    {children || 'Button Text'}
+      {children || 'Button Text'}
     </button>
   )
 }

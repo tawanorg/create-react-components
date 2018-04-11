@@ -3,7 +3,7 @@ import ButtonGroup from './ButtonGroup'
 
 const reactComponents = {
   Button,
-  ButtonGroup
+  ButtonGroup,
 }
 
 export default reactComponents
