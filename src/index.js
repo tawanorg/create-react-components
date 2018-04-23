@@ -1,27 +1,6 @@
-// Third party
-import styledComponents, { ThemeProvider } from 'styled-components'
+// components
+export { default as Button } from './components/Button'
 
-// Components
-import ReactComponents from './components/react';
-
-// Style
-import themeMain from './themes';
-import themeButton from './themes/js/button'
-
-// Style components
-const subStyled = {
-  button: themeButton,
-}
-
-// Style main exporter
-const components = {
-  main: Object.assign({}, themeMain, subStyled),
-  ...subStyled,
-}
-
-export default components
-export {
-  ThemeProvider,
-  ReactComponents,
-  styledComponents,
-}
+// Theme
+export { default as theme } from './theme'
+export { default as ThemeProvider } from './ThemeProvider'

@@ -5,7 +5,7 @@ import { withKnobs } from '@storybook/addon-knobs';
 
 // Themeing
 import { ThemeProvider } from 'styled-components';
-import defaultTheme from '../../src/themes';
+import theme from '../../src/theme';
 
 // Import all story.js
 const req = require.context('../../src', true, /\.story\.js$/);
@@ -17,7 +17,7 @@ function loadStories() {
 setAddon(infoAddon);
 addDecorator(withKnobs);
 addDecorator((story) => (
-  <ThemeProvider theme={defaultTheme}>
+  <ThemeProvider theme={theme}>
     {story()}
   </ThemeProvider>
 ))
