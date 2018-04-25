@@ -3,10 +3,18 @@ import { storiesOf } from '@storybook/react';
 import { text } from '@storybook/addon-knobs';
 
 // components
-import Button from './Button';
+import Button from './index';
 
 const story = storiesOf('Button', module);
 
-story.add('Button With knobs', () => (
-  <Button>{text('An Button')}</Button>
+story.add('Button secondary', () => (
+  <React.Fragment>
+    <Button secondary>{text('Secondary Button')}</Button>
+  </React.Fragment>
+));
+
+story.add('Button primary', () => (
+  <React.Fragment>
+    <Button primary>{text('Primary Button')}</Button>
+  </React.Fragment>
 ));

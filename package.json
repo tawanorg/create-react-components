@@ -20,13 +20,11 @@
   },
   "dependencies": {
     "classnames": "^2.2.5",
+    "prop-types": "^15.6.1",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
     "styled-components": "^3.2.5",
     "styled-system": "^2.2.1"
-  },
-  "peerDependencies": {
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1",
-    "prop-types": "^15.6.1"
   },
   "devDependencies": {
     "@kadira/storybook": "^2.35.3",
@@ -45,7 +43,6 @@
     "babel-preset-es2015-rollup": "^3.0.0",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-1": "^6.24.1",
-    "classnames": "^2.2.5",
     "cssnano": "^3.10.0",
     "enzyme": "^2.9.1",
     "eslint": "^4.3.0",
