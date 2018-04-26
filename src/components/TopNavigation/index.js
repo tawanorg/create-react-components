@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import cssSet from 'classnames'
+
 import {
   space,
   width,
@@ -32,6 +33,7 @@ class TopNavigation extends React.Component {
     super(props);
     this.state = {
       openDropdown: null,
+      isDropdownOpen: false,
       isProfileOpen: false,
       style: {
         clientHeight: 0,
@@ -39,8 +41,8 @@ class TopNavigation extends React.Component {
     }
 
     this.getMainLinks = this.getMainLinks.bind(this)
-    this.handleOnMouseOver = this.handleOnMouseOver.bind(this)
-    this.handleHideDropdown = this.handleHideDropdown.bind(this)
+    this.handleOnOpenDropdown = this.handleOnOpenDropdown.bind(this)
+    this.handleOnCloseDropdown = this.handleOnCloseDropdown.bind(this)
     this.getWrapperStyle = this.getWrapperStyle.bind(this)
     this.handleOnCloseProfile = this.handleOnCloseProfile.bind(this)
     this.handleOnOpenProfile = this.handleOnOpenProfile.bind(this)
@@ -50,15 +52,16 @@ class TopNavigation extends React.Component {
     this.getWrapperStyle()
   }
 
-  handleOnMouseOver(menu) {
+  handleOnOpenDropdown(menu) {
     this.setState({
       openDropdown: menu,
+      isDropdownOpen: true,
     })
   }
 
-  handleHideDropdown() {
+  handleOnCloseDropdown() {
     this.setState({
-      openDropdown: null,
+      isDropdownOpen: false,
     })
   }
 
@@ -92,19 +95,22 @@ class TopNavigation extends React.Component {
       const arrowIcon = isHasChildren ? 'zmdi zmdi-caret-down' : 'zmdi zmdi-caret-up'
 
       return (
-        <Flex position="relative" key={key}>
+        <Flex
+          position="relative"
+          key={key}
+        >
           <CustomLink
             {...menu}
             className="menu-link"
-            onMouseOver={this.handleOnMouseOver.bind(this, menu)}
+            onMouseEnter={this.handleOnOpenDropdown.bind(this, menu)}
           >
           <div>
             <span>{menu.title}</span>
             {isHasChildren && <Icon position="absolute" className={arrowIcon} right="0" top="0" fontSize="22px" />}
           </div>
           {
-            this.state.openDropdown &&
-            this.state.openDropdown.link === menu.link &&
+            this.state.isDropdownOpen &&
+            this.state.openDropdown && this.state.openDropdown.link === menu.link &&
             isHasChildren > 0 &&
             <ArrowDropdown
               width="220px"
@@ -167,7 +173,11 @@ class TopNavigation extends React.Component {
   render() {
     return (
       <Wrapper ref={(ref) => { this.navigation = ref}}>
-        <Flex p="1.032rem" alignItems="center">
+        <Flex
+          p="1.032rem"
+          alignItems="center"
+          onMouseLeave={this.handleOnCloseDropdown}
+        >
           <Logo />
           {this.getMainLinks()}
         </Flex>
