@@ -20,6 +20,7 @@ const AvatarWrapper = styled.div`
   justify-content: center;
   cursor: pointer;
   font-weight: 300;
+  color: white;
 
   img {
 	   border-radius: 50%;
@@ -34,10 +35,14 @@ const Avatar = ({
   className,
   name,
   size,
+  ...rest,
 }) => {
   return (
-    <AvatarWrapper size={size}>
-      {name}
+    <AvatarWrapper
+      {...rest}
+      size={size}
+    >
+      {name.substr(0, 1)}
     </AvatarWrapper>
   )
 }
@@ -45,11 +50,12 @@ const Avatar = ({
 Avatar.propTypes = {
   className: PropTypes.string,
   size: PropTypes.number,
+  name: PropTypes.func,
 };
 
 Avatar.defaultProps = {
   className: '',
-  name: 'A',
+  name: 'Name',
   size: 38,
 };
 

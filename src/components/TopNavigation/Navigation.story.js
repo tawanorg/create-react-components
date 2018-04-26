@@ -64,8 +64,30 @@ const ACTION_MENU = [
   }
 ]
 
+
+const PROFILE_MENU = [
+  {
+    title: 'My Account',
+    path: null,
+    link: '/myaccount',
+    icon: null,
+    children: [],
+  },
+  {
+    title: 'Log Out',
+    path: null,
+    link: '/logout',
+    icon: null,
+    children: [],
+  }
+]
+
 story.add('Full Navigation', () => (
   <React.Fragment>
-    <TopNavigation mainMenus={MAIN_MENU} />
+    <TopNavigation
+      mainMenus={MAIN_MENU}
+      actionMenus={ACTION_MENU}
+      profileMenus={PROFILE_MENU}
+    />
   </React.Fragment>
 ));

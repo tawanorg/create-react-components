@@ -27,9 +27,13 @@ import {
 const Flex = ({
   className,
   children,
+  ...rest,
 }) => {
   return (
-    <div className={className}>
+    <div
+      {...rest}
+      className={className}
+    >
       {children}
     </div>
   )

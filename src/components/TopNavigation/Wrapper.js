@@ -10,7 +10,6 @@ const Wrapper = styled.div`
   a {
     font-size: 14px;
     font-weight: 300;
-    text-transform: uppercase;
     color: #B3B3B3;
 
     &:hover {
@@ -19,18 +18,20 @@ const Wrapper = styled.div`
 
     &.menu-link {
       margin: 0 1rem;
+      font-weight: 500;
 
       span {
         padding-right: 0.5rem;
+        text-transform: uppercase;
       }
     }
 
     &.menu-children-link {
       color: ${props => props.theme.colors.grey300};
       font-size: ${props => props.theme.fontSize.normal};
-      padding: 5px;
+      padding: 5px 0;
       display: flex;
-      font-weight: 500;
+      font-weight: 400;
     }
   }
 `

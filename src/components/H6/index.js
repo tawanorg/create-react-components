@@ -30,4 +30,5 @@ H6.defaultProps = {
 
 export default styled(H6)`
   color: ${props => props.theme.colors.darkblue}
+  margin: 0;
 `;
