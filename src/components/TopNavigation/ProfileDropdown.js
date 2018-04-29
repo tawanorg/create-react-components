@@ -13,6 +13,7 @@ const ProfileDropdown = ({
   menus,
   title,
   subtitle,
+  profileImageUrl,
   ...rest,
 }) => {
   return (
@@ -20,6 +21,7 @@ const ProfileDropdown = ({
       <Box my="0.5rem">
         <Avatar
           name={title}
+          imageUrl={profileImageUrl}
         />
       </Box>
       <Box mb="0.5rem">
@@ -50,12 +52,14 @@ ProfileDropdown.propTypes = {
   menus: PropTypes.array,
   title: PropTypes.string,
   subtitle: PropTypes.string,
+  profileImageUrl: PropTypes.string,
 }
 
 ProfileDropdown.defaultProps = {
   menus: [],
   title: null,
   subtitle: null,
+  profileImageUrl: null,
 }
 
 export default ProfileDropdown

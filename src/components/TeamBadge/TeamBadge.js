@@ -35,9 +35,10 @@ const TeamBadge = ({
 }) => {
   return (
     <TeamBadgeWrapper alignItems="center" className={className}>
+      {logo &&
       <Flex mr="1rem">
         <img alt={subtitle} src={logo} className="rounded" height="40" />
-      </Flex>
+      </Flex>}
       <Flex flexDirection="column">
         <Flex>
           <small>{title}</small>

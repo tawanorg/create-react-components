@@ -82,12 +82,42 @@ const PROFILE_MENU = [
   }
 ]
 
-story.add('Full Navigation', () => (
+story.add('With no profile picture', () => (
   <React.Fragment>
     <TopNavigation
       mainMenus={MAIN_MENU}
       actionMenus={ACTION_MENU}
       profileMenus={PROFILE_MENU}
+      teamData={{
+        title: "national level",
+        subtitle: "Australian Football League",
+        logo: "https://upload.wikimedia.org/wikipedia/en/thumb/e/e4/Australian_Football_League.svg/1200px-Australian_Football_League.svg.png",
+      }}
+      userData={{
+        fullname: "Sam Simple",
+        clubname: "Australian Football League",
+      }}
+    />
+  </React.Fragment>
+));
+
+
+story.add('With no team/profile picture', () => (
+  <React.Fragment>
+    <TopNavigation
+      mainMenus={MAIN_MENU}
+      actionMenus={ACTION_MENU}
+      profileMenus={PROFILE_MENU}
+      teamData={{
+        title: "national level",
+        subtitle: "Australian Football League",
+        logo: "",
+      }}
+      userData={{
+        fullname: "Sam Simple",
+        clubname: "Australian Football League",
+        profileImageUrl: null,
+      }}
     />
   </React.Fragment>
 ));

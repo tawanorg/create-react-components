@@ -95,7 +95,7 @@ class TopNavigation extends React.Component {
           >
           <div>
             <span>{menu.title}</span>
-            {isHasChildren && <Icon position="absolute" className={arrowIcon} right="0" top="0" fontSize="22px" />}
+            {isHasChildren && <Icon position="absolute" className={arrowIcon} right="9px" top="-2px" fontSize="22px" />}
           </div>
           {
             this.state.isDropdownOpen &&
@@ -130,12 +130,11 @@ class TopNavigation extends React.Component {
   }
 
   renderProfile() {
-    const { profileMenus } = this.props
-
+    const { profileMenus, userData } = this.props
     return (
       <React.Fragment>
         <Avatar
-          name="Sam Sample"
+          name={userData.fullname}
           onMouseOver={this.handleOnOpenProfile}
         />
         {
@@ -148,8 +147,8 @@ class TopNavigation extends React.Component {
             p="5px 10px"
           >
             <ProfileDropdown
-              title="Sam Sample"
-              subtitle="Australian Football League"
+              title={userData.fullname}
+              subtitle={userData.clubname}
               menus={profileMenus}
             />
           </ArrowDropdown>
@@ -159,6 +158,10 @@ class TopNavigation extends React.Component {
   }
 
   render() {
+    const {
+      teamData,
+    } = this.props
+
     return (
       <Wrapper ref={(ref) => { this.navigation = ref}}>
         <Flex
@@ -185,11 +188,7 @@ class TopNavigation extends React.Component {
             </button>
           </FlexWithButtonLink>
           <FlexWithDivider px="1rem" alignItems="center">
-            <TeamBadge
-              title="national level"
-              subtitle="Australian Football League"
-              logo="https://upload.wikimedia.org/wikipedia/en/thumb/e/e4/Australian_Football_League.svg/1200px-Australian_Football_League.svg.png"
-            />
+            <TeamBadge {...teamData} />
           </FlexWithDivider>
           <Flex
             position="relative"
@@ -208,11 +207,31 @@ class TopNavigation extends React.Component {
 TopNavigation.defaultProps = {
   mainMenus: PropTypes.array,
   actionMenus: PropTypes.array,
+  teamData: PropTypes.shape({
+    title: PropTypes.string,
+    subtitle: PropTypes.string,
+    logo: PropTypes.string,
+  }),
+  userData: PropTypes.shape({
+    fullname: PropTypes.string,
+    clubname: PropTypes.string,
+    profileImageUrl: PropTypes.string,
+  })
 }
 
 TopNavigation.propTypes = {
   mainMenus: [],
   actionMenus: [],
+  teamData: {
+    title: null,
+    subtitle: null,
+    logo: null,
+  },
+  userData: {
+    fullname: null,
+    clubname: null,
+    profileImageUrl: null,
+  }
 }
 
 export default TopNavigation
