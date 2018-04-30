@@ -1,10 +1,14 @@
 {
-  "name": "my-app",
+  "name": "tgp-react-components",
   "version": "1.0.0",
   "main": "./lib/index.js",
   "private": true,
   "engines": {
     "node": ">=4.0.0"
+  },
+  "repository": {
+    "type" : "git", 
+    "url" : "https://github.com/imgstg/tgp-react-components.git"
   },
   "author": {
     "name": "",
