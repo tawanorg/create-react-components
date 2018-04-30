@@ -53,10 +53,11 @@ function createPackageFile() {
       homepage,
       peerDependencies,
       dependencies,
+      name,
     } = packageData;
 
     const minimalPackage = {
-      name: 'components-react',
+      name,
       author,
       version,
       description,
@@ -66,8 +67,7 @@ function createPackageFile() {
       license,
       bugs,
       homepage,
-      peerDependencies,
-      peerDependencies: dependencies
+      peerDependencies: Object.assign({}, peerDependencies, dependencies)
     };
 
     return new Promise((resolve) => {

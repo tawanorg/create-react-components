@@ -1,5 +1,5 @@
 import React from 'react';
-import TopNavigation from 'components-react/TopNavigation';
+import TopNavigation from 'components/TopNavigation';
 import {
   MAIN_MENU,
   ACTION_MENU,

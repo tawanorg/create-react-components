@@ -1,5 +1,5 @@
 import React from 'react';
-import Avatar from 'components-react/Avatar';
+import Avatar from 'components/Avatar';
 
 /** Avatar Custom Name */
 export default class ExampleAvatar extends React.Component {

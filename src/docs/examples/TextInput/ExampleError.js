@@ -1,5 +1,5 @@
 import React from 'react';
-import TextInput from 'components-react/TextInput';
+import TextInput from 'components/TextInput';
 
 /** Required TextBox with error */
 export default class ExampleError extends React.Component {

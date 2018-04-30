@@ -1,6 +1,7 @@
 import React from 'react';
-import TopNavigation from 'components-react/TopNavigation';
-import ThemeProvider from 'components-react/ThemeProvider';
+
+import ThemeProvider from 'components/ThemeProvider';
+import TopNavigation from 'components/TopNavigation';
 
 import {
   MAIN_MENU,

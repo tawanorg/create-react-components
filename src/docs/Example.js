@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import CodeExample from './CodeExample';
-import theme from '../components/theme'
-import ThemeProvider from 'components-react/ThemeProvider';
+
+import ThemeProvider from 'components/ThemeProvider';
 
 class Example extends React.Component {
   constructor(props) {

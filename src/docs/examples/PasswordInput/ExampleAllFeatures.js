@@ -1,5 +1,5 @@
 import React from 'react';
-import PasswordInput from 'components-react/PasswordInput';
+import PasswordInput from 'components/PasswordInput';
 
 /** All features enabled */
 class ExampleAllFeatures extends React.Component {

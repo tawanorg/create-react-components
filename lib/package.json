@@ -1,16 +1,21 @@
 {
-  "name": "components-react",
+  "name": "tgp-react-components",
   "author": {
     "name": "",
     "email": "",
     "url": ""
   },
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "./index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/imgstg/tgp-react-components.git"
+  },
   "homepage": "",
   "peerDependencies": {
     "classnames": "^2.2.5",
     "lodash": "^4.17.10",
+    "polished": "^1.9.2",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
     "styled-components": "^3.2.6",
