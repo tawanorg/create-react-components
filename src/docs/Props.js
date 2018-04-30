@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Props = ({props}) => {
+  console.log('props', props)
   return (
     <table className="props">
       <thead>

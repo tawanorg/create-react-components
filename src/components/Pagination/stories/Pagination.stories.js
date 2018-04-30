@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { text } from '@storybook/addon-knobs';
 
 // components
-import Pagination from './Pagination';
+import Pagination from '../Pagination';
 
 const story = storiesOf('Pagination', module);
 

@@ -2,10 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
+import { themeProp } from '../theme'
+
 const AvatarWrapper = styled.div`
   line-height: 0;
   display: flex;
-  background-color: ${props => props.theme.colors.pinkross};
+  background-color: ${themeProp('colors.pinkross')};
   border-radius: 50%;
   height: ${props => props.size}px;
   width: ${props => props.size}px;
@@ -46,7 +48,7 @@ Avatar.propTypes = {
   /** Size of avatar picture */
   size: PropTypes.number,
   /** Username */
-  name: PropTypes.func,
+  name: PropTypes.string,
 };
 
 Avatar.defaultProps = {

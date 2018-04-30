@@ -1,9 +1,10 @@
 import styled from 'styled-components'
+import { themeProp } from '../theme'
 
 const Wrapper = styled.div`
   display: flex;
-  background-color: ${props => props.theme.colors.darkblue};
-  color: ${props => props.theme.colors.white};
+  background-color: ${themeProp('colors.darkblue')};
+  color: ${themeProp('colors.white')};
   justify-content: space-between;
 
   a {
@@ -26,8 +27,8 @@ const Wrapper = styled.div`
     }
 
     &.menu-children-link {
-      color: ${props => props.theme.colors.grey300};
-      font-size: ${props => props.theme.fontSize.normal};
+      color: ${themeProp('colors.grey300')};
+      font-size: ${themeProp('fontSizeNormal')};
       padding: 5px 0;
       display: flex;
       font-weight: 400;

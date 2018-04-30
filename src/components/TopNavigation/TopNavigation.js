@@ -7,7 +7,7 @@ import Icon from '../Icon'
 import TeamBadge from '../TeamBadge'
 import Flex from '../Flex'
 import ArrowDropdown from '../ArrowDropdown'
-import Logo from '../Logo'
+import EyeIcon from '../EyeIcon'
 
 // Self components
 import Wrapper from './Wrapper'
@@ -16,7 +16,7 @@ import CustomLink from './CustomLink'
 import FlexWithButtonLink from './FlexWithButtonLink'
 import ProfileDropdown from './ProfileDropdown'
 
-/** TopNavigation. */
+/** Top Navigation. */
 class TopNavigation extends React.Component {
   constructor(props) {
     super(props);
@@ -169,8 +169,9 @@ class TopNavigation extends React.Component {
           alignItems="center"
           onMouseLeave={this.handleOnCloseDropdown}
         >
-          <Logo
+          <EyeIcon
             src="https://testing-sportstg.cs57.force.com/SportsTGAdmins/resource/STG_Brand_Mark"
+            alt="STG Logo"
             height={31}
           />
           {this.getMainLinks()}
@@ -204,9 +205,40 @@ class TopNavigation extends React.Component {
   }
 }
 
-TopNavigation.defaultProps = {
-  mainMenus: PropTypes.array,
-  actionMenus: PropTypes.array,
+TopNavigation.propTypes = {
+  mainMenus: PropTypes.arrayOf(PropTypes.shape({
+    title: PropTypes.string,
+    path: PropTypes.string,
+    link: PropTypes.string,
+    icon: PropTypes.string,
+    children: PropTypes.arrayOf(PropTypes.shape({
+      title: PropTypes.string,
+      path: PropTypes.string,
+      link: PropTypes.string,
+      icon: PropTypes.string,
+      children: PropTypes.array,
+    }))
+  })),
+  actionMenus: PropTypes.arrayOf(PropTypes.shape({
+    title: PropTypes.string,
+    path: PropTypes.string,
+    link: PropTypes.string,
+    icon: PropTypes.string,
+    children: PropTypes.arrayOf(PropTypes.shape({
+      title: PropTypes.string,
+      path: PropTypes.string,
+      link: PropTypes.string,
+      icon: PropTypes.string,
+      children: PropTypes.array,
+    }))
+  })),
+  profileMenus: PropTypes.arrayOf(PropTypes.shape({
+    title: PropTypes.string,
+    path: PropTypes.string,
+    link: PropTypes.string,
+    icon: PropTypes.string,
+    children: PropTypes.array,
+  })),
   teamData: PropTypes.shape({
     title: PropTypes.string,
     subtitle: PropTypes.string,
@@ -219,9 +251,10 @@ TopNavigation.defaultProps = {
   })
 }
 
-TopNavigation.propTypes = {
+TopNavigation.defaultProps = {
   mainMenus: [],
   actionMenus: [],
+  profileMenus: [],
   teamData: {
     title: null,
     subtitle: null,

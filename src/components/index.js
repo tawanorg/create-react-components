@@ -6,3 +6,4 @@ export {default as Avatar} from './Avatar';
 export {default as TopNavigation} from './TopNavigation';
 
 export { default } from './theme'
+export { default } from 'styled-components'

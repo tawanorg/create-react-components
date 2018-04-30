@@ -1,7 +1,8 @@
 import styled from 'styled-components';
+import { themeProp } from '../theme'
 
 const H6 = styled.h6`
-  color: ${props => props.theme.colors.darkblue}
+  color: ${themeProp('colors.darkblue')}
 `
 
 export default H6

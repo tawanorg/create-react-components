@@ -8,7 +8,7 @@ import {
   PROFILE_MENU
 } from '../../mocksData/ExampleMenuData'
 
-/** With no team/profile picture */
+/** With Different Club Name */
 export default class ExampleTopNavigation extends React.Component {
   render() {
     return (
@@ -18,8 +18,8 @@ export default class ExampleTopNavigation extends React.Component {
           actionMenus={ACTION_MENU}
           profileMenus={PROFILE_MENU}
           teamData={{
-            title: "national level",
-            subtitle: "Australian Football League",
+            title: "state level",
+            subtitle: "Victoria Football",
             logo: "",
           }}
           userData={{

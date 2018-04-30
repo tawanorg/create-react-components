@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { text } from '@storybook/addon-knobs';
 
 // components
-import TopNavigation from './TopNavigation';
+import TopNavigation from '../TopNavigation';
 
 const story = storiesOf('TopNavigation', module);
 

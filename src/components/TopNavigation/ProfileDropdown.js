@@ -4,9 +4,10 @@ import Avatar from '../Avatar'
 import H6 from '../H6'
 import Box from '../Box'
 import CustomLink from './CustomLink'
+import { themeProp } from '../theme'
 
 const ProfileWrapper = Box.extend`
-  color: ${props => props.theme.colors.grey150};
+  color: ${themeProp('colors.grey150')};
 `
 
 const ProfileDropdown = ({
