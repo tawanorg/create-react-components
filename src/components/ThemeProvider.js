@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled, {
-  injectGlobal,
   ThemeProvider as StyledThemeProvider,
 } from 'styled-components'
 

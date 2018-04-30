@@ -3,8 +3,9 @@
 
 ## Installation
 
-- Bootstrap
-- Material-design-iconic-font 
+Those third-parties are required
+- Bootstrap 4 
+- Material Design Iconic Font (http://zavoloklom.github.io/material-design-iconic-font/)
 - Google Fonts ```Roboto``` weight 300,400,500,700
 
 index.html
@@ -18,22 +19,25 @@ index.js (React main file)
 
 ```
 import 'normalize.css';
+import ThemeProvider from 'tgp-react-components/ThemeProvider'
 
 <ThemeProvider>
-	<App />
+ <App />
 </ThemeProvider>
 ```
 
 Custom theme
 ```
+import ThemeProvider from 'tgp-react-components/ThemeProvider'
+
 const customTheme = {
-	colors: {
-		red: '#F83111'
-	}
+ colors: {
+ 	red: '#F83111'
+ }
 }
 
 <ThemeProvider theme={customTheme}>
-	<App />
+ <App />
 </ThemeProvider>
 ```
 
